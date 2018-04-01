@@ -39,10 +39,16 @@ typedef struct kernel_timeval{
     
 #if defined(__ICCARM__)
 #define __kl_volatile  volatile
+#define __kl_inline    static inline
+#define __kl_weak      __weak
 #elif defined(__GNUC__)
 #define __kl_volatile  volatile
+#define __kl_inline    static __inline
+#define __kl_weak      __attribute__((weak))
 #elif defined(__CC_ARM)
 #define __kl_volatile  __volatile
+#define __kl_inline    static __inline
+#define __kl_weak      __weak
 #endif
 
 #define ENO_OK                          0               /**< There is no error */
@@ -69,12 +75,12 @@ typedef struct kernel_timeval{
 #define kernel_test_bit(x,b)           (((x)&(kernel_bit(b)))?1:0)
 #define kernel_test_bits(x,bits)       (((x)&(bits))?1:0)
     
-struct kernel_list_head{
-    struct kernel_list_head *next;
-    struct kernel_list_head *prev;
+struct klist_head{
+    struct klist_head *next;
+    struct klist_head *prev;
 };
 
-typedef struct kernel_list_head kernel_list_t;
+typedef struct klist_head klist_t;
 
 struct kernel_device{
     const char *name;

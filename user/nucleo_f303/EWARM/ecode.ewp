@@ -1929,6 +1929,27 @@
   </configuration>
   <group>
     <name>applications</name>
+    <group>
+      <name>cli</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\applications\cli\cli_lexer.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\applications\cli\cli_parser.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\applications\cli\cli_server.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\applications\cli\cli_string.c</name>
+      </file>
+    </group>
+    <group>
+      <name>xmodem</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\applications\xmodem\xmodem.c</name>
+      </file>
+    </group>
   </group>
   <group>
     <name>drivers</name>
@@ -1949,6 +1970,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\kernel\kernel.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\kernel\klist.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\kernel\kmem.c</name>
@@ -2220,6 +2244,21 @@
         </group>
       </group>
     </group>
+  </group>
+  <group>
+    <name>misc</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\misc\crc16.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\misc\crc8.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\misc\fifo.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\misc\pid.c</name>
+    </file>
   </group>
   <group>
     <name>user</name>

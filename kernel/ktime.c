@@ -1,6 +1,6 @@
 /**
   *******************************************************
-  *@file        kernel_time.c
+  *@file        ktime.c
   *@author      Arno
   *@version     V1.0.0
   *@date        2018/4/1
