@@ -2651,6 +2651,15 @@
     <name>user</name>
     <group>
       <name>application</name>
+      <file>
+        <name>$PROJ_DIR$\..\application\handle.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\application\serial_console.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\application\version.c</name>
+      </file>
     </group>
     <group>
       <name>driver</name>

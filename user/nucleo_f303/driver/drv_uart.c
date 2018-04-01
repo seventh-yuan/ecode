@@ -112,11 +112,12 @@ static void stm_uart_init(void)
 int console_hw_write(const kl_u8_t *buf, kl_size_t len)
 {
     kl_size_t size = len;
-    while(len--)
+    while(len)
     {
         while(!LL_USART_IsActiveFlag_TXE(UART1_INSTANCE));
         LL_USART_TransmitData8(UART1_INSTANCE, *buf);
         buf++;
+        len--;
     }
     
     return (size-len);
@@ -129,8 +130,15 @@ int console_hw_write(const kl_u8_t *buf, kl_size_t len)
   */
 int console_hw_read(kl_u8_t *buf, kl_size_t len)
 {
+    kl_size_t size = len;
     
-    return 0;
+    while(len)
+    {
+        while(!LL_USART_IsActiveFlag_RXNE(UART1_INSTANCE));
+        *buf ++ = LL_USART_ReceiveData8(UART1_INSTANCE);
+        len --;
+    }
+    return (size-len);
 }
 /**
   * @brief uart hardware init.

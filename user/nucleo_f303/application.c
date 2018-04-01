@@ -10,6 +10,8 @@
   */
 /* Includes----------------------------------------------*/
 #include "../../global/include.h"
+#include "application/serial_console.h"
+#include "application/handle.h"
 
 /*Private variables--------------------------------------*/
 /*Public variables---------------------------------------*/
@@ -23,7 +25,8 @@
 
 void application_init(void)
 {
-    
+    console_register_handles();
+    serial_console_init();
     print_debug("application init pass.");
     kprintln("system startup time: %0.3f s.", kernel_get_second());
 }

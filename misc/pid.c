@@ -13,8 +13,7 @@ Kd = Kp*Td/T
 
 int pid_init(struct pid *pid, float kp, float ki, float kd, float max_output, float min_output)
 {
-    ASSERT_PARAM(pid!=NULL);
-    
+
     pid->err = 0;
     pid->err_last = 0;
     pid->err_last_last = 0;
@@ -37,7 +36,6 @@ void pid_reset(struct pid *pid)
 
 float pid_position_calc(struct pid *pid, float desired_val, float feadback, float duration)
 {
-    ASSERT_PARAM(pid!=NULL);
     
     pid->err = desired_val - feadback;
     pid->err_sum += pid->err;
@@ -74,8 +72,7 @@ int pid_set_limit(struct pid *pid, float output_max, float output_min)
 float pid_increment_calc(struct pid *pid, float desired_val, float feedback, float duration)
 {
     float duk = 0;
-    ASSERT_PARAM(pid!=NULL);
-    
+
     pid->err = desired_val-feedback;
     pid->err_sum += pid->err;
     

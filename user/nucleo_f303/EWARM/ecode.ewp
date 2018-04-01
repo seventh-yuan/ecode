@@ -317,6 +317,8 @@
           <state>$PROJ_DIR$\..\..\..\library\platform\STM32Cube_FW_F3_V1.9.0\STM32F3xx_HAL_Driver\Inc</state>
           <state>$PROJ_DIR$\..</state>
           <state>$PROJ_DIR$\..\driver</state>
+          <state>$PROJ_DIR$\..\..\..\applications</state>
+          <state>$PROJ_DIR$\..\..\..\drivers</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2264,6 +2266,15 @@
     <name>user</name>
     <group>
       <name>application</name>
+      <file>
+        <name>$PROJ_DIR$\..\application\handle.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\application\serial_console.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\application\version.c</name>
+      </file>
     </group>
     <group>
       <name>driver</name>

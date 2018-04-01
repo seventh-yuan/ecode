@@ -66,7 +66,7 @@ int cli_server_readline(struct cli_server *server, char *buf, int bufsz, kernel_
             return -1;
         if((ch=cli_server_getc(server))<=0)
         {
-            sleep_ms(1);
+            kernel_sleep_ms(1);
             continue;
         }
 
