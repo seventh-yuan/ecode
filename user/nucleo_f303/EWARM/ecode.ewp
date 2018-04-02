@@ -730,7 +730,7 @@
         </option>
         <option>
           <name>IlinkIcfOverride</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>IlinkIcfFile</name>
@@ -1955,11 +1955,26 @@
   </group>
   <group>
     <name>drivers</name>
+    <group>
+      <name>serial</name>
+      <file>
+        <name>$PROJ_DIR$\..\..\..\drivers\serial\serial.c</name>
+      </file>
+    </group>
   </group>
   <group>
     <name>global</name>
     <file>
+      <name>$PROJ_DIR$\..\..\..\global\Include.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\..\global\startup.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\global\syscfg.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\global\types.h</name>
     </file>
   </group>
   <group>
@@ -2270,6 +2285,9 @@
         <name>$PROJ_DIR$\..\application\handle.c</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\..\application\led_server.c</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\..\application\serial_console.c</name>
       </file>
       <file>
@@ -2278,6 +2296,9 @@
     </group>
     <group>
       <name>driver</name>
+      <file>
+        <name>$PROJ_DIR$\..\driver\drv_led.c</name>
+      </file>
       <file>
         <name>$PROJ_DIR$\..\driver\drv_uart.c</name>
       </file>

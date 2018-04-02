@@ -38,17 +38,17 @@ typedef struct kernel_timeval{
     
     
 #if defined(__ICCARM__)
-#define __kl_volatile  volatile
-#define __kl_inline    static inline
-#define __kl_weak      __weak
+#define __kernel_volatile       volatile
+#define __kernel_inline          static inline
+#define __kernel_weak            __weak
 #elif defined(__GNUC__)
-#define __kl_volatile  volatile
-#define __kl_inline    static __inline
-#define __kl_weak      __attribute__((weak))
+#define __kernel_volatile       volatile
+#define __kernel_inline          static __inline
+#define __kernel_weak            __attribute__((weak))
 #elif defined(__CC_ARM)
-#define __kl_volatile  __volatile
-#define __kl_inline    static __inline
-#define __kl_weak      __weak
+#define __kernell_volatile        __volatile
+#define __kernel_inline          static __inline
+#define __kernel_weak            __weak
 #endif
 
 #define ENO_OK                          0               /**< There is no error */
@@ -83,19 +83,20 @@ struct klist_head{
 typedef struct klist_head klist_t;
 
 struct kernel_device{
+    struct klist_head parent;
     const char *name;
     int flags;
-    const struct device_operations *fops;
+    const struct device_operations *ops;
     void *private_data;
 };
-typedef struct kernel_device kernel_device_t;
+typedef struct kernel_device * kernel_device_t;
 
 struct device_operations{
     int (*init)(struct kernel_device *dev);
     int (*open)(struct kernel_device *dev, int flags);
     int (*close)(struct kernel_device *dev);
-    int (*read)(struct kernel_device *dev, kl_u8_t *buf, int len);
-    int (*write)(struct kernel_device *dev, const kl_u8_t *buf, int len);
+    int (*read)(struct kernel_device *dev, kl_u8_t *buf, kl_size_t len);
+    int (*write)(struct kernel_device *dev, const kl_u8_t *buf, kl_size_t len);
     int (*cntl)(struct kernel_device *dev, int cmd, void *arg);
 };
 

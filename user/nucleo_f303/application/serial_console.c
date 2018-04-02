@@ -20,9 +20,9 @@ static const cli_interface_t console_interface={
 };
 
 #define CONSOLE_BUFFER_SIZE 128
-static kl_u8_t console_input_buffer[CONSOLE_BUFFER_SIZE];
-static kl_u8_t console_output_buffer[CONSOLE_BUFFER_SIZE];
-static kl_u8_t console_parser_buffer[CONSOLE_BUFFER_SIZE];
+static uint8_t console_input_buffer[CONSOLE_BUFFER_SIZE];
+static uint8_t console_output_buffer[CONSOLE_BUFFER_SIZE];
+static uint8_t console_parser_buffer[CONSOLE_BUFFER_SIZE];
 
 static struct cli_server console_server = {
     .interface = &console_interface,

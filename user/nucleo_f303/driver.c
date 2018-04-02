@@ -11,6 +11,7 @@
 /* Includes----------------------------------------------*/
 #include "../../global/include.h"
 #include "driver/drv_uart.h"
+#include "driver/drv_led.h"
 
 
 /*Private variables--------------------------------------*/
@@ -28,8 +29,8 @@ void driver_init(void)
     SystemClock_Config();
     
     uart_hw_init();
+    led_hw_init();
     
-
     print_debug("driver init pass.");
 }
 

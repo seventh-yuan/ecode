@@ -6,6 +6,13 @@
 extern "C"{
 #endif
 
+  /**
+  * @brief This function is used to register device.
+  * @param name: device name.
+  * @param dev: dev to be register.
+  * @retval 0:ok, -1:failed.
+  */
+int device_register(const char *name, kernel_device_t dev);
 /**
   * @brief This function is used to open a device.
   * @param name: device name.
@@ -19,7 +26,7 @@ kernel_device_t device_open(const char *name, int flags);
   * @param dev: device instance.
   * @retval 0: ok, -1:failed.
   */
-int device_close(kernel_device_t *dev);
+int device_close(kernel_device_t dev);
 
 /**
   * @brief This function is used to write data to device.
@@ -28,7 +35,7 @@ int device_close(kernel_device_t *dev);
   * @param len: length of data to write.
   * @retval -1: fialed, others: number of bytes has been writed.
   */
-int device_write(kernel_device_t *dev, const kl_u8_t *buf, kl_size_t len);
+int device_write(kernel_device_t dev, const kl_u8_t *buf, kl_size_t len);
 
 /**
   * @brief This function is used to read data from device.
@@ -37,7 +44,7 @@ int device_write(kernel_device_t *dev, const kl_u8_t *buf, kl_size_t len);
   * @param len: length of data to read.
   * @retval -1: fialed, others: number of bytes has been read.
   */
-int device_read(kernel_device_t *dev, kl_u8_t *buf, kl_size_t len);
+int device_read(kernel_device_t dev, kl_u8_t *buf, kl_size_t len);
 
 /**
   * @brief This function is used to control device.
@@ -46,7 +53,7 @@ int device_read(kernel_device_t *dev, kl_u8_t *buf, kl_size_t len);
   * @param arg: command argument.
   * @retval 0:ok, -1:failed.
   */
-int device_control(kernel_device_t *dev, int cmd, void *arg);
+int device_control(kernel_device_t dev, int cmd, void *arg);
 #ifdef __cplusplus
 }
 #endif

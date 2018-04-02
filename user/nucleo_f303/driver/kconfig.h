@@ -5,6 +5,8 @@
 
 #define CONFIG_USING_PRINT  1
 
+#define CONFIG_USING_DEVICE     1
+
 
 
 #endif

@@ -13,7 +13,7 @@
 #include "ktime.h"
 
 /*Private variables--------------------------------------*/
-static __kl_volatile unsigned long _kernel_wall_jiffies = 0;
+static __kernel_volatile unsigned long _kernel_wall_jiffies = 0;
 /*Public variables---------------------------------------*/
 /*Private functions--------------------------------------*/
 /*Public functions---------------------------------------*/

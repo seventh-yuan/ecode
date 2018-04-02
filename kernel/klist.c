@@ -16,7 +16,7 @@
 /*Private functions--------------------------------------*/
 /*Public functions---------------------------------------*/
   
-__kl_inline void __klist_del(struct klist_head *prev, struct klist_head *next)
+__kernel_inline void __klist_del(struct klist_head *prev, struct klist_head *next)
 {
     next->prev = prev;
     prev->next = next;
@@ -29,7 +29,7 @@ void klist_del(struct klist_head *entry)
     entry->next=KL_NULL;
 }
 
-__kl_inline void __klist_add(struct klist_head *entry,struct klist_head *prev, struct klist_head *next)
+__kernel_inline void __klist_add(struct klist_head *entry,struct klist_head *prev, struct klist_head *next)
 {
     next->prev = entry;
     entry->next = next;
