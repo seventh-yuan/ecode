@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=677545862
+Checksum=1618389158
 [CodeCoverage]
 Enabled=_ 0
 [Exceptions]
@@ -116,7 +116,7 @@ ShowTiming=1
 mode=0
 [Breakpoints2]
 Bp0=_ 0 "EMUL_CODE" "0x08003C4E" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_CODE" "0x08004916" 0 0 1 "" 0 "" 0
+Bp1=_ 0 "EMUL_CODE" "0x08004916" 0 0 1 "" 0 "" 0
 Count=2
 [Aliases]
 Count=0

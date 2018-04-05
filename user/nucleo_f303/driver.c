@@ -29,6 +29,9 @@ void driver_init(void)
     SystemClock_Config();
     
     uart_hw_init();
+    
+    kernel_console_set_device("COM2");
+    
     led_hw_init();
     
     print_debug("driver init pass.");

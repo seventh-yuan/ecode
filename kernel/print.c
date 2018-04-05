@@ -40,6 +40,21 @@ static kernel_device_t _kernel_print_device = KL_NULL;
 /*Public functions---------------------------------------*/
 extern int console_hw_write(const kl_u8_t *buf, kl_size_t len);
 extern int console_hw_read(kl_u8_t *buf, kl_size_t len);
+
+#if CONFIG_USING_PRINT_DEVICE==1
+/**
+  * @brief This function is used to set console device.
+  * @param name: device name.
+  * @retval 0:ok, -1:failed.
+  */
+int kernel_console_set_device(const char *name)
+{
+    _kernel_print_device = device_open(name, 0);
+    
+    return 0;
+}
+#endif
+  
 /**
   * @brief This function is used to write data to console.
   * @param buf: data to be writed.

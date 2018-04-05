@@ -21,7 +21,7 @@ extern "C"{
 #if CONFIG_USING_DEVICE==1
 
 #ifndef CONFIG_USING_PRINT_DEVICE
-#define CONFIG_USING_PRINT_DEVICE   0
+#define CONFIG_USING_PRINT_DEVICE   1
 #endif
 
 #endif
@@ -62,6 +62,20 @@ extern "C"{
 #endif
 
 
+
+/**
+  * @brief This function is used to set console device.
+  * @param name: device name.
+  * @retval 0:ok, -1:failed.
+  */
+int kernel_console_set_device(const char *name);
+
+/**
+  * @brief This function is used to write data to console.
+  * @param buf: data to be writed.
+  * @param len: length of data to writed.
+  * @retval size has been writed.
+  */
 int kernel_console_write(const kl_char_t *buf, kl_size_t len);
 
 /**
