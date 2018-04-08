@@ -581,7 +581,7 @@
         <option>
           <name>AUserIncludes</name>
           <state>$PROJ_DIR$\..\..\..\library\FreeRTOSv9.0.0\FreeRTOS\Source\portable\IAR\ARM_CM4F</state>
-          <state>$PROJ_DIR$\..\driver</state>
+          <state>$PROJ_DIR$\..\</state>
         </option>
         <option>
           <name>AExtraOptionsCheckV2</name>
@@ -2302,18 +2302,30 @@
       <file>
         <name>$PROJ_DIR$\..\driver\drv_uart.c</name>
       </file>
-      <file>
-        <name>$PROJ_DIR$\..\driver\stm32f3xx_hal_msp.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\driver\stm32f3xx_it.c</name>
-      </file>
     </group>
     <file>
       <name>$PROJ_DIR$\..\application.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\driver.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\FreeRTOSConfig.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\kconfig.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\stm32f3xx_hal_conf.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\stm32f3xx_hal_msp.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\stm32f3xx_it.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\stm32f3xx_it.h</name>
     </file>
   </group>
 </project>
