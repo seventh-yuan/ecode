@@ -27,16 +27,8 @@ typedef enum{
     True=!False,
 }kl_bool_t;
 
-typedef struct kernel_timeval{
-    kernel_time_t tv_sec;
-    kernel_usec_t tv_usec;
-}kernel_timeval_t;
-
-
 #define KL_NULL    0
 
-    
-    
 #if defined(__ICCARM__)
 #define __kernel_volatile       volatile
 #define __kernel_inline          static inline
@@ -66,21 +58,33 @@ typedef struct kernel_timeval{
 #define container_of(node, type, member)\
     ((type *)((char *)(node) - (unsigned long)(&((type *)0)->member)))
 
-#define kernel_bit(b)    (1<<(b))
+#define KBIT(b)    (1<<(b))
 
-#define kernel_bit_set(x,b)            ((x)|=kernel_bit(b))
-#define kernel_bit_reset(x,b)          ((x)&=~(kernel_bit(b)))
-#define kernel_bits_set(x,bits)        ((x)|=bits)
-#define kernel_bits_reset(x,bits)      ((x)&=~(bi/bits))
-#define kernel_test_bit(x,b)           (((x)&(kernel_bit(b)))?1:0)
-#define kernel_test_bits(x,bits)       (((x)&(bits))?1:0)
-    
+#define KBIT_SET(x,b)            ((x)|=KBIT(b))
+#define KBIT_RESET(x,b)          ((x)&=~(KBIT(b)))
+#define KBITS_SET(x,bits)        ((x)|=bits)
+#define KBITS_RESET(x,bits)      ((x)&=~(bi/bits))
+#define KBIT_TEST(x,b)           (((x)&(KBIT(b)))?1:0)
+#define KBITS_TEST(x,bits)       (((x)&(bits))?1:0)
+
+typedef struct kernel_timeval{
+    kernel_time_t tv_sec;
+    kernel_usec_t tv_usec;
+}kernel_timeval_t;
+
 struct klist_head{
     struct klist_head *next;
     struct klist_head *prev;
 };
 
 typedef struct klist_head klist_t;
+
+typedef struct kernel_timer{
+    struct klist_head entry;
+    kernel_time_t expires;
+    void (*func)(unsigned long);
+    unsigned long data;
+}kernel_timer_t;
 
 struct kernel_device{
     struct klist_head parent;

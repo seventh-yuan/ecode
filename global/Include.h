@@ -1,7 +1,7 @@
 #ifndef __INCLUDE_H__
 #define __INCLUDE_H__
-#include "types.h"
-#include "syscfg.h"
+#include "../kernel/types.h"
+#include "../kernel/syscfg.h"
 
 #include "../kernel/cmsis_os.h"
 #include "../kernel/device.h"

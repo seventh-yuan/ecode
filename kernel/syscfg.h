@@ -7,11 +7,15 @@
 #endif
 
 #ifndef CONFIG_USING_DEVICE
-#define CONFIG_USING_DEVICE     0
+#define CONFIG_USING_DEVICE     1
 #endif
 
 #ifndef CONFIG_USING_PRINT
 #define CONFIG_USING_PRINT      1
+#endif
+
+#ifndef CONFIG_USING_KTIMER
+#define CONFIG_USING_KTIMER     1
 #endif
 
 
