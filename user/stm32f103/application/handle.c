@@ -13,7 +13,7 @@ static int help(struct cli_server *server);
 static int reset(struct cli_server *server);
 static int version(struct cli_server *server);
 
-
+#if CONFIG_USING_RTOS==1
 static const cli_command_t cmds[]={
     {.pattern="help", .handle = help, .usage="help:\n\t-view commands list\n"},
     {.pattern="reset", .handle = reset, .usage="reset:\n\t-reset system\n"},
@@ -75,5 +75,11 @@ static int version(struct cli_server *server)
     return ENO_OK;
 }
 
+#else
+void console_register_handles(void)
+{
+
+}
+#endif
 
 

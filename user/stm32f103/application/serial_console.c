@@ -39,4 +39,9 @@ void serial_console_init(void)
 {
     cli_server_init(&console_server, "serial_console", configMINIMAL_STACK_SIZE);
 }
+#else
+void serial_console_init(void)
+{
+
+}
 #endif

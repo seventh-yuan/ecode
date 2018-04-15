@@ -104,6 +104,11 @@ struct device_operations{
     int (*cntl)(struct kernel_device *dev, int cmd, void *arg);
 };
 
+typedef struct{
+    struct klist_head entry;
+    int (*thread_entry)(void *arg);
+    void *arg;
+}kernel_thread_t;
 
 
 #ifdef __cplusplus

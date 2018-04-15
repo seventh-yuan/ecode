@@ -30,8 +30,9 @@ void driver_init(void)
     
     uart_hw_init();
     
+#if CONFIG_USING_RTOS==1
     kernel_console_set_device("COM2");
-    
+#endif 
     led_hw_init();
     
     print_debug("driver init pass.");

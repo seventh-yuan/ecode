@@ -29,15 +29,8 @@ void led_server_init(void)
     
 }
 #else
-static s8_t led_task(void)
-{
-    device_cntl(leddev, 0, led_state);
-    led_state = !led_state;  
-}
-
 void led_server_init(void)
 {
-    leddev = device_open("led", 0);
-    sch_add(led_task, 500,500);
+
 }
 #endif
