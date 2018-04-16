@@ -168,7 +168,7 @@ NVIC value of 255. */
 //#define configUSE_STATS_FORMATTING_FUNCTIONS	1
 //#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS()	(ulHighFrequencyTimers=0ul)
 //#define portGET_RUN_TIME_COUNTER_VALUE()			ulHighFrequencyTimers
-#ifdef CONFIG_USE_RTOS
+#ifdef CONFIG_USING_RTOS
 #define configCHECK_FOR_STACK_OVERFLOW 0
 #endif
 
