@@ -13,7 +13,7 @@
 #include "ktime.h"
 
 /*Private variables--------------------------------------*/
-static __kernel_volatile unsigned long _kernel_wall_jiffies = 0;
+__kernel_volatile unsigned long kernel_jiffies = 0;
 static KLIST_HEAD(_kernel_timer_head); 
 /*Public variables---------------------------------------*/
 /*Private functions--------------------------------------*/
@@ -27,13 +27,13 @@ static KLIST_HEAD(_kernel_timer_head);
   */
 int kernel_gettime(kernel_timeval_t *tv_val)
 {
-    unsigned long temp = _kernel_wall_jiffies;
+    unsigned long temp = kernel_jiffies;
     
     if(tv_val==NULL)
         return -1;
-    tv_val->tv_sec = _kernel_wall_jiffies/KERNEL_HZ;
+    tv_val->tv_sec = kernel_jiffies/KERNEL_HZ;
     
-    tv_val->tv_usec = (_kernel_wall_jiffies-tv_val->tv_sec*KERNEL_HZ)*1000000/KERNEL_HZ;
+    tv_val->tv_usec = (kernel_jiffies-tv_val->tv_sec*KERNEL_HZ)*1000000/KERNEL_HZ;
     
     return 0;
 }
@@ -44,7 +44,7 @@ int kernel_gettime(kernel_timeval_t *tv_val)
   */
 kernel_msec_t kernel_get_millis(void)
 {
-    return _kernel_wall_jiffies*1000/KERNEL_HZ;
+    return kernel_jiffies*1000/KERNEL_HZ;
 }
 
 /**
@@ -53,7 +53,7 @@ kernel_msec_t kernel_get_millis(void)
   */
 kernel_sec_t kernel_get_second(void)
 {
-    return _kernel_wall_jiffies*1.0/KERNEL_HZ;
+    return kernel_jiffies*1.0/KERNEL_HZ;
 }
 
 /**
@@ -63,9 +63,9 @@ kernel_sec_t kernel_get_second(void)
   */
 void kernel_delay_ms(kernel_msec_t millis)
 {
-    unsigned long timeout = _kernel_wall_jiffies + millis/1000/KERNEL_HZ;
+    unsigned long timeout = kernel_jiffies + millis/1000/KERNEL_HZ;
     
-    while(kernel_time_before(_kernel_wall_jiffies, timeout));
+    while(kernel_time_before(kernel_jiffies, timeout));
         
 }
 
@@ -178,7 +178,7 @@ void kernel_timer_periodic(void)
     klist_for_each_safe(entry, tmp, &_kernel_timer_head)
     {
         struct kernel_timer *timer = klist_entry(entry, struct kernel_timer, entry);
-        if(kernel_time_after(_kernel_wall_jiffies, timer->expires))
+        if(kernel_time_after(kernel_jiffies, timer->expires))
         {
             kernel_timer_del(timer);
             if(timer->func!=KL_NULL)
@@ -196,7 +196,7 @@ void kernel_timer_periodic(void)
   */
 void kernel_update_wall_jiffies(void)
 {
-    _kernel_wall_jiffies++;
+    kernel_jiffies++;
 #if CONFIG_USING_KTIMER==1
     kernel_timer_periodic();
 #endif

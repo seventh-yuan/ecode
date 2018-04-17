@@ -28,6 +28,7 @@ extern "C"{
 #define kernel_time_after_eq(unknow, known)  ((long)(unknow)-(long)(known)>=0)
 #define kernel_time_before_eq(unknow, known) ((long)(known)-(long)(unknow)>=0)
     
+extern __kernel_volatile unsigned long kernel_jiffies;
 /**
   * @brief This function is used to get kernel timeval.
   * @param tv_val: destination to save timeval.

@@ -12,12 +12,14 @@ static char _gcommand_buffer[GCOMMAND_BUFFER_SIZE];
 static int help(struct cli_server *server);
 static int reset(struct cli_server *server);
 static int version(struct cli_server *server);
+static int time(struct cli_server *server);
 
 #if CONFIG_USING_RTOS==1
 static const cli_command_t cmds[]={
     {.pattern="help", .handle = help, .usage="help:\n\t-view commands list\n"},
     {.pattern="reset", .handle = reset, .usage="reset:\n\t-reset system\n"},
     {.pattern="version", .handle = version, .usage="version:\n\t-show version information\n"},
+    {.pattern="time", .handle = time, .usage ="time:\n\t-show system time.\n"},
     {NULL,NULL,NULL},
 };
 static command_node_t cmdhead;
@@ -71,6 +73,14 @@ static int reset(struct cli_server *server)
 static int version(struct cli_server *server)
 {
     int ret = version_show(_gcommand_buffer, sizeof(_gcommand_buffer));
+    cli_server_write(server, _gcommand_buffer, ret);
+    return ENO_OK;
+}
+
+static int time(struct cli_server *server)
+{
+    kernel_sec_t second = kernel_get_second();
+    int ret = sprintf(_gcommand_buffer, "%0.3fs"KERNEL_NL,second);
     cli_server_write(server, _gcommand_buffer, ret);
     return ENO_OK;
 }
