@@ -56,6 +56,13 @@ kernel_sec_t kernel_get_second(void);
 void kernel_mdelay(kernel_millis_t millis);
 
 /**
+  * @brief This function is used to delay micro seconds.
+  * @param micro seconds to delay.
+  * @retval None.
+  */
+void kernel_udelay(kernel_usec_t us);
+
+/**
   * @brief This function is used to sleep milliseconds.
   * @param millis milliseconds to sleep.
   * @retval None.

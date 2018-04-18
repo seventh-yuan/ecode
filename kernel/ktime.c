@@ -68,7 +68,15 @@ void kernel_mdelay(kernel_millis_t millis)
     while(kernel_time_before(kernel_jiffies, timeout));
         
 }
-
+/**
+  * @brief This function is used to delay micro seconds.
+  * @param micro seconds to delay.
+  * @retval None.
+  */
+void kernel_udelay(kernel_usec_t us)
+{
+    plat_udelay(us);
+}
 /**
   * @brief This function is used to sleep milliseconds.
   * @param millis milliseconds to sleep.
