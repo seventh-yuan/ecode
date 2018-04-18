@@ -47,7 +47,7 @@ static int xmodem_getc(struct xmodem *xmodem)
     
     const struct xmodem_operations *ops = xmodem->ops;
     
-    kernel_msec_t last_time = kernel_get_millis();
+    kernel_millis_t last_time = kernel_get_millis();
     
     
     while (1)

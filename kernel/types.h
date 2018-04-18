@@ -18,7 +18,7 @@ typedef kl_s16_t            kl_ssize_t;
 typedef kl_u16_t            kl_size_t;
 
 typedef kl_u32_t            kernel_time_t;
-typedef kl_u32_t            kernel_msec_t;
+typedef kl_u32_t            kernel_millis_t;
 typedef kl_u32_t            kernel_usec_t;
 typedef double              kernel_sec_t;
 

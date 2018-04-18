@@ -42,7 +42,7 @@ int kernel_gettime(kernel_timeval_t *tv_val)
   * @brief This function is used to get kernel kernel millisecond time.
   * @retval milliseconds of kernel.
   */
-kernel_msec_t kernel_get_millis(void)
+kernel_millis_t kernel_get_millis(void)
 {
     return kernel_jiffies*1000/KERNEL_HZ;
 }
@@ -61,7 +61,7 @@ kernel_sec_t kernel_get_second(void)
   * @param milliseconds to delay.
   * @retval None.
   */
-void kernel_delay_ms(kernel_msec_t millis)
+void kernel_mdelay(kernel_millis_t millis)
 {
     unsigned long timeout = kernel_jiffies + millis/1000/KERNEL_HZ;
     
@@ -74,12 +74,12 @@ void kernel_delay_ms(kernel_msec_t millis)
   * @param millis milliseconds to sleep.
   * @retval None.
   */
-void kernel_sleep_ms(kernel_msec_t millis)
+void kernel_msleep(kernel_millis_t millis)
 {
 #if CONFIG_USING_RTOS==1
     osDelay(millis);
 #else
-    kernel_delay_ms(millis);
+    kernel_mdelay(millis);
 #endif
 }
 
@@ -90,7 +90,7 @@ void kernel_sleep_ms(kernel_msec_t millis)
   */
 void kernel_sleep(kernel_sec_t sec)
 {
-    kernel_sleep_ms((kernel_msec_t)sec*1000);
+    kernel_msleep((kernel_millis_t)sec*1000);
 }
 
 #if CONFIG_USING_KTIMER==1

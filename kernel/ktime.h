@@ -40,7 +40,7 @@ int kernel_gettime(kernel_timeval_t *tv_val);
   * @brief This function is used to get kernel kernel millisecond time.
   * @retval milliseconds of kernel.
   */
-kernel_msec_t kernel_get_millis(void);
+kernel_millis_t kernel_get_millis(void);
 
 /**
   * @brief This function is used to get kernel kernel second time.
@@ -53,14 +53,14 @@ kernel_sec_t kernel_get_second(void);
   * @param milliseconds to delay.
   * @retval None.
   */
-void kernel_delay_ms(kernel_msec_t millis);
+void kernel_mdelay(kernel_millis_t millis);
 
 /**
   * @brief This function is used to sleep milliseconds.
   * @param millis milliseconds to sleep.
   * @retval None.
   */
-void kernel_sleep_ms(kernel_msec_t millis);
+void kernel_msleep(kernel_millis_t millis);
 
 /**
   * @brief This function is used to sleep seconds.
