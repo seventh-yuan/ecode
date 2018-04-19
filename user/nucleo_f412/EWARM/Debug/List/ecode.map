@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.70.2.11706/W32 for ARM                16/Apr/2018  13:10:38
+# IAR ELF Linker V7.70.2.11706/W32 for ARM                19/Apr/2018  21:52:59
 # Copyright 2007-2016 IAR Systems AB.
 #
 #    Output file  =  
@@ -32,6 +32,8 @@
 #        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\led_server.o
 #        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\list.o
 #        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\pid.o
+#        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\plat-stm32f4xx.o
+#        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\plat.o
 #        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\port.o
 #        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\portasm.o
 #        H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\print.o
@@ -712,7 +714,6 @@ _exit                   0x08005011          Code  Gb  cexit.o [5]
 _gcommand_buffer        0x20004ac4    0x80  Data  Lc  handle.o [1]
 _kernel_print_device    0x20004e38     0x4  Data  Lc  print.o [1]
 _kernel_timer_head      0x200000d4     0x8  Data  Lc  ktime.o [1]
-_kernel_wall_jiffies    0x20004e2c     0x4  Data  Lc  ktime.o [1]
 _main                   0x08005003          Code  Gb  cmain.o [5]
 _serial_int_rx          0x08004165    0x44  Code  Lc  serial.o [1]
 _serial_int_tx          0x080041a9    0x42  Code  Lc  serial.o [1]
@@ -783,8 +784,9 @@ kernel_console_write    0x08004005    0x32  Code  Gb  print.o [1]
 kernel_get_millis       0x08002b91    0x14  Code  Gb  ktime.o [1]
 kernel_get_second       0x08002ba5    0x20  Code  Gb  ktime.o [1]
 kernel_init             0x08004f9f     0x2  Code  Gb  kernel.o [1]
+kernel_jiffies          0x20004e2c     0x4  Data  Gb  ktime.o [1]
+kernel_msleep           0x08002bc5     0xc  Code  Gb  ktime.o [1]
 kernel_periodic         0x08004fa9     0xc  Code  Gb  kernel.o [1]
-kernel_sleep_ms         0x08002bc5     0xc  Code  Gb  ktime.o [1]
 kernel_start            0x08004fa1     0x8  Code  Gb  kernel.o [1]
 kernel_timer_del        0x08002bd1    0x18  Code  Gb  ktime.o [1]
 kernel_timer_periodic   0x08002be9    0x3a  Code  Gb  ktime.o [1]

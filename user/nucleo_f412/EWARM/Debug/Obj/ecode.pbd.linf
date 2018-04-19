@@ -3,6 +3,7 @@ H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\cli_lexer.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\cli_parser.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\cli_server.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\cli_string.pbi
+H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\plat.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\serial.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\startup.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\cmsis_os.pbi
@@ -21,6 +22,7 @@ H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\queue.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\tasks.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\timers.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\system_stm32f4xx.pbi
+H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\plat-stm32f4xx.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\stm32f4xx_hal.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\stm32f4xx_hal_adc.pbi
 H:\develop\baseline\devp\ecode\user\nucleo_f412\EWARM\Debug\Obj\stm32f4xx_hal_adc_ex.pbi

@@ -16,9 +16,9 @@ static void led_thread(void const *args)
     while(1)
     {
         led_on(leddev, 0);
-        kernel_sleep_ms(500);
+        kernel_msleep(500);
         led_off(leddev, 0);
-        kernel_sleep_ms(500);
+        kernel_msleep(500);
     }
 }
 

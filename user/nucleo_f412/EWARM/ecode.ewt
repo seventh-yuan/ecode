@@ -2336,6 +2336,12 @@
     </group>
   </group>
   <group>
+    <name>arch</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\arch\plat.c</name>
+    </file>
+  </group>
+  <group>
     <name>drivers</name>
     <group>
       <name>serial</name>
@@ -2427,6 +2433,12 @@
         </file>
         <file>
           <name>$PROJ_DIR$\..\..\..\library\platform\STM32Cube_FW_F4_V1.19.0\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c</name>
+        </file>
+      </group>
+      <group>
+        <name>plat</name>
+        <file>
+          <name>$PROJ_DIR$\..\..\..\library\platform\STM32Cube_FW_F4_V1.19.0\plat\plat-stm32f4xx.c</name>
         </file>
       </group>
       <group>

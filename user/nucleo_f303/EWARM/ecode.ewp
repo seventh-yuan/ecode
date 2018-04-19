@@ -1954,6 +1954,12 @@
     </group>
   </group>
   <group>
+    <name>arch</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\..\arch\plat.c</name>
+    </file>
+  </group>
+  <group>
     <name>drivers</name>
     <group>
       <name>serial</name>
@@ -1965,7 +1971,7 @@
   <group>
     <name>global</name>
     <file>
-      <name>$PROJ_DIR$\..\..\..\global\Include.h</name>
+      <name>$PROJ_DIR$\..\..\..\global\include.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\global\startup.c</name>
@@ -2053,6 +2059,12 @@
           </file>
           <file>
             <name>$PROJ_DIR$\..\..\..\library\platform\STM32Cube_FW_F3_V1.9.0\CMSIS\Device\ST\STM32F3xx\Source\Templates\system_stm32f3xx.c</name>
+          </file>
+        </group>
+        <group>
+          <name>plat</name>
+          <file>
+            <name>$PROJ_DIR$\..\..\..\library\platform\STM32Cube_FW_F3_V1.9.0\plat\plat-stm32f3xx.c</name>
           </file>
         </group>
         <group>
