@@ -63,7 +63,7 @@ kernel_sec_t kernel_get_second(void)
   */
 void kernel_mdelay(kernel_millis_t millis)
 {
-    unsigned long timeout = kernel_jiffies + millis/1000/KERNEL_HZ;
+    unsigned long timeout = kernel_jiffies + millis/1000*KERNEL_HZ;
     
     while(kernel_time_before(kernel_jiffies, timeout));
         
